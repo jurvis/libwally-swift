@@ -35,6 +35,15 @@ fi
 
 cd CLibWally/libwally-core
 
+# Switch to vanilla libsecp256k1, rather than the more experimental libsecp256k1-zkp.
+# Since libsecp256k1-zkp is rebased on vanilla libsecp256k1, we can simply checkout
+# a common commit.
+pushd src/secp256k1
+  # Latest commit used in Bitcoin Core:
+  # https://github.com/bitcoin/bitcoin/commits/master/src/secp256k1
+  git checkout 0559fc6e41b65af6e52c32eb9b1286494412a162 || exit 1
+popd
+
 if [ $clean == 1 ]; then
   rm -rf build
 fi
@@ -53,7 +62,7 @@ if [ $simulator == 1 ]; then
     export CFLAGS="-O3 -arch x86_64 -arch i386 -fembed-bitcode-marker -mios-simulator-version-min=10.0 -isysroot `xcrun -sdk iphonesimulator --show-sdk-path`"
     export CXXFLAGS="-O3 -arch x86_64 -arch i386 -fembed-bitcode-marker -mios-simulator-version-min=10.0 -isysroot `xcrun -sdk iphonesimulator --show-sdk-path`"
     mkdir -p build
-    ./configure --disable-shared --host=x86_64-apple-darwin --enable-static --disable-elements
+    ./configure --disable-shared --host=x86_64-apple-darwin --enable-static --disable-elements --enable-standard-secp
     if [ $clean == 1 ]; then
       set -v # display commands
       make clean
@@ -73,7 +82,7 @@ if [ $device == 1 ]; then
     export CFLAGS="-O3 -arch arm64 -arch arm64e -arch armv7 -arch armv7s -fembed-bitcode -mios-version-min=10.0 -isysroot `xcrun -sdk iphoneos --show-sdk-path`"
     export CXXFLAGS="-O3 -arch arm64 -arch arm64e -arch armv7 -arch armv7s -isysroot -fembed-bitcode -mios-version-min=10.0 -isysroot `xcrun -sdk iphoneos --show-sdk-path`"
     mkdir -p build
-    ./configure --disable-shared --host=aarch64-apple-darwin14 --enable-static --disable-elements
+    ./configure --disable-shared --host=aarch64-apple-darwin14 --enable-static --disable-elements --enable-standard-secp
     if [ $clean == 1 ]; then
       make clean
     fi
