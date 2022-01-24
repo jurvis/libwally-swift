@@ -20,6 +20,10 @@ Supports a minimal set of features based on v0.8.4. See also [original docs](htt
   - [ ] Derive scriptPubKey #6 (wishlist)
 - [ ] BIP38 functions
 - [x] BIP39 functions
+- [ ] Descriptor functions
+  - [x] Parse and canonicalize
+  - [x] Convert to address
+  - [ ] Convert to scriptPubKey
 - [ ] Script functions
   - [x] Serialize scriptPubKey
   - [x] Determine scriptPubkey type

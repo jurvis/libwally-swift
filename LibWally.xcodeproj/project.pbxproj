@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A20C942522C6BC3900B0D206 /* libwallycore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A20C942422C6BC3900B0D206 /* libwallycore.a */; };
+		A21016BD279EE9D00002330E /* Descriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21016BC279EE9D00002330E /* Descriptor.swift */; };
+		A21016BF279EEFBD0002330E /* DescriptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21016BE279EEFBD0002330E /* DescriptorTests.swift */; };
 		A21016C1279F03E20002330E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A21016C0279F03E20002330E /* README.md */; };
 		A232260122B94A6B00C3B79C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232260022B94A6B00C3B79C /* Transaction.swift */; };
 		A232260322B94A8400C3B79C /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232260222B94A8400C3B79C /* TransactionTests.swift */; };
@@ -41,6 +43,8 @@
 		A20557A522C6CDBE007221AA /* LibWally.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = LibWally.modulemap; sourceTree = "<group>"; };
 		A20C942422C6BC3900B0D206 /* libwallycore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwallycore.a; path = "CLibWally/libwally-core/src/.libs/libwallycore.a"; sourceTree = "<group>"; };
 		A20C942622C6BDB000B0D206 /* CLibWally */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CLibWally; sourceTree = "<group>"; };
+		A21016BC279EE9D00002330E /* Descriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptor.swift; sourceTree = "<group>"; };
+		A21016BE279EEFBD0002330E /* DescriptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptorTests.swift; sourceTree = "<group>"; };
 		A21016C0279F03E20002330E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A232260022B94A6B00C3B79C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		A232260222B94A8400C3B79C /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				FE1A3C0522B395B300EDCB58 /* Address.swift */,
 				FEC79CE3229E7F3800D86E2E /* BIP32.swift */,
 				FE120F54229C3B6900E7720C /* BIP39.swift */,
+				A21016BC279EE9D00002330E /* Descriptor.swift */,
 				A2BCE19323A7D6B200737BEB /* PSBT.swift */,
 				FE8B80A322B3E5630041CC94 /* Script.swift */,
 				A232260022B94A6B00C3B79C /* Transaction.swift */,
@@ -131,6 +136,7 @@
 				FEC79CE5229E807500D86E2E /* BIP32Tests.swift */,
 				FE9CD3BF229C397900345DFA /* BIP39Tests.swift */,
 				FE8B80A122B397090041CC94 /* AddressTests.swift */,
+				A21016BE279EEFBD0002330E /* DescriptorTests.swift */,
 				A2BCE19123A7D28500737BEB /* PSBTTests.swift */,
 				FE8B80A522B3E5760041CC94 /* ScriptTests.swift */,
 				A232260222B94A8400C3B79C /* TransactionTests.swift */,
@@ -239,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21016C1279F03E20002330E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +253,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21016C1279F03E20002330E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +265,7 @@
 			files = (
 				FE120F55229C3B6900E7720C /* BIP39.swift in Sources */,
 				A2BCE19423A7D6B200737BEB /* PSBT.swift in Sources */,
+				A21016BD279EE9D00002330E /* Descriptor.swift in Sources */,
 				FE39CDFA229DAAF400DD135E /* DataExtension.swift in Sources */,
 				FE1A3C0622B395B300EDCB58 /* Address.swift in Sources */,
 				FE8B80A422B3E5630041CC94 /* Script.swift in Sources */,
@@ -273,6 +280,7 @@
 			files = (
 				FE8B80A222B397090041CC94 /* AddressTests.swift in Sources */,
 				A23509D72398F33E0045D3A5 /* DataExtensionTests.swift in Sources */,
+				A21016BF279EEFBD0002330E /* DescriptorTests.swift in Sources */,
 				FE8B80A622B3E5760041CC94 /* ScriptTests.swift in Sources */,
 				FEC79CE6229E807500D86E2E /* BIP32Tests.swift in Sources */,
 				A2BCE19223A7D28500737BEB /* PSBTTests.swift in Sources */,
