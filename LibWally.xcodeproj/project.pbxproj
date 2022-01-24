@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A20C942522C6BC3900B0D206 /* libwallycore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A20C942422C6BC3900B0D206 /* libwallycore.a */; };
+		A21016C1279F03E20002330E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A21016C0279F03E20002330E /* README.md */; };
 		A232260122B94A6B00C3B79C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232260022B94A6B00C3B79C /* Transaction.swift */; };
 		A232260322B94A8400C3B79C /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A232260222B94A8400C3B79C /* TransactionTests.swift */; };
 		A23509D72398F33E0045D3A5 /* DataExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23509D62398F33E0045D3A5 /* DataExtensionTests.swift */; };
@@ -40,6 +41,7 @@
 		A20557A522C6CDBE007221AA /* LibWally.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = LibWally.modulemap; sourceTree = "<group>"; };
 		A20C942422C6BC3900B0D206 /* libwallycore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwallycore.a; path = "CLibWally/libwally-core/src/.libs/libwallycore.a"; sourceTree = "<group>"; };
 		A20C942622C6BDB000B0D206 /* CLibWally */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CLibWally; sourceTree = "<group>"; };
+		A21016C0279F03E20002330E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A232260022B94A6B00C3B79C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		A232260222B94A8400C3B79C /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
 		A23509D62398F33E0045D3A5 /* DataExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensionTests.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		FE9CD3B3229C397900345DFA /* LibWally */ = {
 			isa = PBXGroup;
 			children = (
+				A21016C0279F03E20002330E /* README.md */,
 				A20557A522C6CDBE007221AA /* LibWally.modulemap */,
 				FE9CD3B4229C397900345DFA /* LibWally.h */,
 				FE9CD3B5229C397900345DFA /* Info.plist */,
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21016C1279F03E20002330E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

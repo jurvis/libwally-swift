@@ -5,28 +5,28 @@ a collection of useful primitives for cryptocurrency wallets.
 
 Supports a minimal set of features based on v0.8.4. See also [original docs](https://wally.readthedocs.io/en/release_0.8.4).
 
-- [ ] Core Functions
+- [ ] Core functions
   - [x] base58 encode / decode
-- [ ] Crypto Functions
+- [ ] Crypto functions
   - [x] sign ECDSA, convert to DER
-- [ ] Address Functions
+- [ ] Address functions
   - [x] Parse to scriptPubKey
   - [ ] Generate from scriptPubKey #7 (wishlist, done for SegWit)
   - [x] Derive
   - [x] WIF
   - [ ] Detect bech32 typos #4 (wishlist)
   - [x] bech32 and bech32m
-- [x] BIP32 Functions
+- [x] BIP32 functions
   - [ ] Derive scriptPubKey #6 (wishlist)
-- [ ] BIP38 Functions
-- [x] BIP39 Functions
-- [ ] Script Functions
+- [ ] BIP38 functions
+- [x] BIP39 functions
+- [ ] Script functions
   - [x] Serialize scriptPubKey
   - [x] Determine scriptPubkey type
 - [ ] PSBT functions
   - [x] Parse and serialize (base64 / binary)
   - [x] Check completeness and extract transaction
-- [ ] Transaction Functions
+- [ ] Transaction functions
   - [x] Compose and sign transaction
   - [x] Calculate fee
 
