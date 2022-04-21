@@ -2,30 +2,27 @@
 import PackageDescription
 
 let package = Package(
-    name: "LibWallySwift",
+    name: "LibWally",
     platforms: [
         .iOS(.v11)
     ],
     products: [
         .library(
             name: "LibWally",
-            targets: ["LibWally"]
+            targets: ["LibWally", "LibWallyCore"]
         )
     ],
     targets: [
         .target(
             name: "LibWally",
-            dependencies: ["LibWallyCore"],
             path: "LibWally"
         ),
         .target(
             name: "LibWallyCore",
-            path: "LibWallyCore"
-        ),
-        .testTarget(
-            name: "LibWallyTests",
-            dependencies: ["LibWally"],
-            path: "LibWallyTests"
+            path: "CLibWally/libwally-core",
+            sources: [
+                "src"
+            ]
         )
     ]
 )

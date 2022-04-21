@@ -14,15 +14,16 @@ pushd src/secp256k1
   # https://github.com/bitcoin/bitcoin/commits/master/src/secp256k1
   git checkout 8746600eec5e7fcd35dabd480839a3a4bdfee87b || exit 1
 popd
-sh ./tools/autogen.sh
 
-cd $PROJECT_DIR
+if [[ ${ACTION:-build} = "build" || $ACTION = "install" ]]; then
+  sh ./tools/autogen.sh
 
-if [[ ${ACTION:-build} = "build" ]]; then
+  cd $PROJECT_DIR
+
   if [[ $PLATFORM_NAME = "macosx" ]]; then
     TARGET_OS="darwin"
   elif [[ $PLATFORM_NAME = "iphonesimulator" ]]; then
-    TARGET_OS="iphonesimulator"
+    TARGET_OS="ios-simulator"
   else
     TARGET_OS="ios"
   fi
@@ -43,17 +44,18 @@ if [[ ${ACTION:-build} = "build" ]]; then
     if [[ $TARGET_ARCH = "arm64" ]]; then
       TARGET_ARCH="aarch64"
     fi
-
-    pushd "CLibWally/libwally-core"
-      export CFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -mios-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
-      export CXXFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -mios-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
-
-      ./configure --disable-shared --host="${TARGET_ARCH}-apple-${TARGET_OS}" --enable-static --disable-elements --enable-standard-secp
-      make
-    popd
   done
-elif [[ $ACTION = "clean" ]]; then
+
   pushd "CLibWally/libwally-core"
-    make clean
+    export CFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
+    export CXXFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
+
+    ./configure --disable-shared --host="${TARGET_ARCH}-apple-darwin" --enable-static --disable-elements --enable-standard-secp
+    make
   popd
+elif [[ $ACTION = "clean" ]]; then
+  make clean
+  cd $PROJECT_DIR
+  rm -f CLibWally/libwally-core/.libs
+  rm -f CLibWally/libwally-core/src/secp256k1/.libs
 fi
