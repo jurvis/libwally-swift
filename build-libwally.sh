@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
 set -e # abort if any command fails
 
-if [[ -f "${HOME}/.bash_profile" ]]; then
-  source "${HOME}/.bash_profile"
-fi
-
 export PATH=$PATH:/opt/homebrew/bin/
 export PYTHON="/usr/bin/python3"
 
 cd CLibWally/libwally-core
+
+# Switch to vanilla libsecp256k1, rather than the more experimental libsecp256k1-zkp.
+# Since libsecp256k1-zkp is rebased on vanilla libsecp256k1, we can simply checkout
+# a common commit.
 pushd src/secp256k1
   # Latest commit used in Bitcoin Core:
   # https://github.com/bitcoin/bitcoin/commits/master/src/secp256k1
