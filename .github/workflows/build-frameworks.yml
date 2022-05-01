@@ -20,10 +20,10 @@ jobs:
       fail-fast: false
       matrix:
         configuration:
-        # - scheme: LibWally
-        #   destination: generic/platform=iOS
-        #   platform: iOS
-        #   sdk-name: iphoneos
+        - scheme: LibWally
+          destination: generic/platform=iOS
+          platform: iOS
+          sdk-name: iphoneos
         - scheme: LibWally
           destination: platform=iOS Simulator,OS=15.2,name=iPhone 13 Pro
           platform: iOS Simulator

@@ -50,6 +50,11 @@ if [[ ${ACTION:-build} = "build" || $ACTION = "install" ]]; then
     export CFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
     export CXXFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
 
+    # CPPFLAGS only required for 64-bit host machines, doing this on arm64 machines will cause a duplicate symbols error.
+    if [[ $NATIVE_ARCH = "x86_64" ]]; then
+      export CPPFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
+    fi
+
     ./configure --disable-shared --host="${TARGET_ARCH}-apple-darwin" --enable-static --disable-elements --enable-standard-secp
     make
   popd
