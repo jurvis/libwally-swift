@@ -48,6 +48,7 @@ if [[ ${ACTION:-build} = "build" || $ACTION = "install" ]]; then
 
   pushd "CLibWally/libwally-core"
     export CFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
+    export CPPFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
     export CXXFLAGS="-O3 ${ARCHES[@]} -fembed-bitcode -m${TARGET_OS}-version-min=11.0 -isysroot `xcrun -sdk ${PLATFORM_NAME} --show-sdk-path`"
 
     ./configure --disable-shared --host="${TARGET_ARCH}-apple-darwin" --enable-static --disable-elements --enable-standard-secp
